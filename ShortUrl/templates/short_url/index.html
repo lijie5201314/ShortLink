@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <form action="/longtoshort" method="post">
+        {% csrf_token %}
+        <input type="text" name="longlink">
+        <input type="submit" value="缩短网址">
+
+    </form>
+    <hr>
+    <form action="/shortcustom" method="post">
+        {% csrf_token %}
+        原网址<input type="text" name="url">
+
+        短链<input type="text" name="shortlink">
+        <input type="submit" value="自定义短链">
+    </form>
+
+    cookie计数器：{{count}}
+</body>
+</html>
